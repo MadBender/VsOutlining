@@ -1,0 +1,19 @@
+﻿<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="VsOutlining.Microsoft.836362D2-1E2D-40D7-BBF4-966128A2916D" Version="1.0.0" Language="en-US" Publisher="Bender" />
+    <DisplayName>Advanced outlining</DisplayName>
+    <Description>Provides additional outlining for JavaScript and C# editors</Description>
+    <Icon>32.png</Icon>
+    <PreviewImage>200.PNG</PreviewImage>
+    <Tags>Javascript, C#, outlining, regions</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,)" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="VsOutlining.dll" />
+  </Assets>
+</PackageManifest>
