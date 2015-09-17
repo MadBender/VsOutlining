@@ -8,7 +8,7 @@ namespace VsOutlining.Outlining
     /// </summary>
     internal abstract class BaseOutliner
 	{
-        private bool FunctionOccured;
+        protected bool FunctionOccured;
 
         /// <summary>
         /// parses input buffer, searches for region start
@@ -78,13 +78,9 @@ namespace VsOutlining.Outlining
 		/// <summary>
 		/// A function that looks for special tokens in source code
 		/// </summary>
-        protected void ProcessCurrentToken(SnapshotParser p)
+        protected virtual void ProcessCurrentToken(SnapshotParser p)
         {         
-            ClassificationSpan span = p.CurrentSpan;
-            //function keyword was found
-            if (span != null && span.ClassificationType.Classification == "keyword" && span.Span.GetText() == "function") {
-                FunctionOccured = true;
-            }
+            
         }
 
         protected void OnRegionFound(TextRegion r)

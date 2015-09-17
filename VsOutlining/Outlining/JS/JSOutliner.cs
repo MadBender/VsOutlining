@@ -81,7 +81,17 @@ namespace VsOutlining.Outlining.JS
                 };
             }
             return null;
-        }       
+        }
+
+        protected override void ProcessCurrentToken(SnapshotParser p)
+        {
+            base.ProcessCurrentToken(p);
+            ClassificationSpan span = p.CurrentSpan;
+            //function keyword was found
+            if (span != null && span.ClassificationType.Classification == "keyword" && span.Span.GetText() == "function") {
+                FunctionOccured = true;
+            }
+        }
 
     }
 }
